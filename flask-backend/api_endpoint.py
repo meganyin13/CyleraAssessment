@@ -52,7 +52,7 @@ def opt2(device_uuid, num_windows):
 def opt3(device_uuid, window_time):
     return index(device_uuid=device_uuid, window_time=window_time)
 
-@app.route('/<string:device_uuid>/<int:end_time>', methods=['GET'])
+@app.route('/<string:device_uuid>/<int:end_time>/.../...', methods=['GET'])
 def opt4(device_uuid, end_time):
     return index(device_uuid=device_uuid, end_time=end_time)
 
@@ -63,6 +63,11 @@ def opt5(device_uuid, end_time, window_time):
 @app.route('/<string:device_uuid>/<int:end_time>/.../<int:num_windows>', methods=['GET'])
 def opt6(device_uuid, end_time, num_windows):
     return index(device_uuid=device_uuid, end_time=end_time, num_windows=num_windows)
+
+@app.route('/<string:device_uuid>/<int:end_time>/<int:window_time>/...', methods=['GET'])
+def opt7(device_uuid, end_time, num_windows):
+    return index(device_uuid=device_uuid, end_time=end_time, window_time=window_time)
+
 
 
 if __name__ == '__main__':
